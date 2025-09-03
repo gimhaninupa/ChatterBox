@@ -1,0 +1,77 @@
+/* ===== Base and Theme ===== */
+body {
+    font-family: 'Arial', monospace;
+    background: url("Pictures/A.jpeg") no-repeat center center fixed;
+    background-size: cover; /* makes image cover the screen */
+    color: #f0f0f0;
+    overflow: hidden;
+}
+
+/* ===== Text (Now Red) ===== */
+.neon-text {
+    color: rgb(8, 194, 61); /* changed from black (#000000) */
+}
+
+/* ===== Borders (No Glow) ===== */
+.neon-border {
+    border: 2px solid #ffffff;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0d0221;
+}
+::-webkit-scrollbar-thumb {
+    background: #2df8e9;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #5ffcf0;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* ===== Input & Button Styling ===== */
+input,
+button {
+    background-color: rgba(13, 2, 33, 0.8);
+    border: 1px solid #2df8e9;
+    color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+input:focus {
+    outline: none;
+}
+button:hover {
+    background-color: #2df8e9;
+    color: #0d0221;
+}
+
+/* ===== Tabs (Mobile) ===== */
+.tab-active {
+    color: #2df8e9;
+    border-bottom: 2px solid #2df8e9;
+}
+
+/* ===== Messages ===== */
+.chat-message {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #df825d;
+}
+
+/* ===== Announcements ===== */
+.announcement {
+    color: #ffffff;
+    text-align: center;
+    font-style: italic;
+}

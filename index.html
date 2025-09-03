@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatterBox</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex items-center justify-center h-screen">
+
+    <!-- Login Container -->
+    <div id="login-container" class="w-full max-w-sm p-8 space-y-6 bg-black bg-opacity-80 rounded-lg neon-border">
+        <h1 class="text-3xl font-bold text-center neon-text">ChatterBox</h1>
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium text-white">Username</label>
+                <input id="username" type="text" required class="w-full px-3 py-2 mt-1 rounded-md">
+            </div>
+            <div>
+                <label for="room" class="block text-sm font-medium text-white">Room</label>
+                <input id="room" type="text" required class="w-full px-3 py-2 mt-1 rounded-md">
+            </div>
+            <button type="submit" class="w-full py-2 font-bold rounded-md neon-text">Join Chat</button>
+        </form>
+    </div>
+
+    <!-- Chat Container -->
+    <div id="chat-container" class="hidden w-full h-full md:max-w-6xl md:h-5/6 md:max-h-[900px] flex flex-col md:flex-row bg-black bg-opacity-70 md:rounded-lg md:neon-border">
+        
+        <!-- Side Panel -->
+        <aside id="side-panel" class="hidden md:flex w-full md:w-1/3 lg:w-1/4 h-full p-4 flex-col md:border-r-2 border-cyan-500 border-opacity-50 space-y-4">
+            <div>
+                <h3 class="neon-text text-lg">CURRENT ROOM</h3>
+                <p id="current-room-name" class="text-xl font-bold truncate"></p>
+            </div>
+            <div class="flex-grow min-h-0">
+                <h3 class="neon-text text-lg">MEMBERS</h3>
+                <ul id="member-list" class="mt-2 space-y-1 overflow-y-auto h-full pr-1"></ul>
+            </div>
+            <div class="flex-grow min-h-0">
+                <h3 class="neon-text text-lg">OTHER ROOMS</h3>
+                <ul id="other-rooms-list" class="mt-2 space-y-1 overflow-y-auto h-full pr-1"></ul>
+            </div>
+            <div class="mt-auto pt-4">
+                <button id="logout-button" class="w-full py-2 font-bold rounded-md neon-text">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Chat -->
+        <div id="main-chat-content" class="flex flex-col w-full md:w-2/3 lg:w-3/4 h-full">
+            <div class="flex md:hidden border-b-2 border-cyan-500 border-opacity-50">
+                <button id="chat-tab" class="flex-1 p-3 font-bold tab-active">Chat</button>
+                <button id="info-tab" class="flex-1 p-3 font-bold">Info</button>
+            </div>
+
+            <main class="w-full h-full p-4 flex flex-col">
+                <div id="messages" class="flex-1 my-2 overflow-y-auto pr-2 space-y-4"></div>
+                <form id="message-form" class="flex gap-2 mt-auto">
+                    <input id="message-input" type="text" placeholder="Type your message here..." autocomplete="off" required class="flex-1 px-3 py-2 rounded-md">
+                    <button type="submit" class="px-6 py-2 font-bold rounded-md neon-text">Send</button>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
