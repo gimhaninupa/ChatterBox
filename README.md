@@ -1,3 +1,20 @@
-Real-Time Chat Room (WebSocket Based)OverviewThis project is a real-time chat room application built using Python (asyncio + websockets) for the backend and HTML, CSS, and JavaScript for the frontend. It supports multiple rooms, user nicknames, and displays the last 5 messages when a new user joins. The system is responsive and works smoothly across desktop, tablet, and mobile devices.FeaturesReal-time bi-directional communication using WebSockets.Multiple chat rooms support.Username-based login to enter a specific room.Last 5 messages displayed for new joiners to provide context.Responsive frontend that adapts to mobile, tablet, and desktop screens.Modern UI/UX design with a "neon" theme and an auto-updating chat window.System messages for user join/leave events.Tech StackBackend: Python 3, asyncio, websocketsFrontend: HTML5, CSS3 (with Tailwind CSS), JavaScript (Vanilla)Protocol: WebSocketHow to RunInstall Dependencies:Make sure you have Python 3 installed. Then, install the websockets library:pip install websockets
-Start the Backend Server:Run the Python script from your terminal:python web_server.py
-The server will start listening on ws://localhost:2024.Launch the Frontend:Open the index.html file in any modern web browser.Start Chatting:Enter a username and a room name to join. You can open multiple browser tabs or windows to simulate different users.
+# ChatterBox Real-Time Chat (WebSocket Based)
+
+### Overview
+
+This project is a real-time chat room application built using Python for the backend and HTML, CSS, and JavaScript for the frontend. The backend leverages `asyncio` and the `websockets` library to manage connections and message broadcasting. It supports multiple rooms and user nicknames (usernames). When a new user joins, a history of recent messages is displayed. The system features a responsive design with a dedicated mobile view to ensure usability across different devices.
+
+### Features
+
+* **Real-time Communication:** Utilizes WebSockets for bidirectional communication between the server and clients.
+* **Multiple Chat Rooms:** Users can join distinct chat rooms by specifying a room name during login.
+* **User Presence:** Displays a list of members currently in the user's room and a list of other available rooms.
+* **Message History:** Loads and displays recent chat history to users upon joining a room. The server is configured to retrieve a specific number of historical lines.
+* **Responsive Frontend:** The interface adapts to different screen sizes, with a tabbed layout for mobile devices to switch between the chat view and the info panel.
+* **System Announcements:** Broadcasts system messages when a user joins or leaves a room.
+
+### Tech Stack
+
+* **Backend:** Python 3, `asyncio`, `websockets` library
+* **Frontend:** HTML5, CSS3 (including Tailwind CSS), Vanilla JavaScript
+* **Protocol:** WebSocket
